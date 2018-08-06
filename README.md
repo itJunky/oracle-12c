@@ -100,7 +100,7 @@ Create is done; commit the container now
 ## Run
 Create and run a container named orcl:
 ```
-$ docker run --shm-size=4g -dP --name orcl wscherphof/oracle-12c
+$ docker run --shm-size=4g -dP --name orcl oracle-12c:latest
 989f1b41b1f00c53576ab85e773b60f2458a75c108c12d4ac3d70be4e801b563
 ```
 
