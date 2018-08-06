@@ -131,9 +131,7 @@ Should you want to modify & build your own image:
 
 4) `$ docker build -t oracle-12c:step1 step1`
 
-5) `$ docker run --shm-size=4g -ti --name step1 oracle-12c:step1 /bin/bash`
-
-6) ` # /tmp/install/install` (takes about 5m)
+5) `$ docker run --shm-size=4g -ti --name step1 oracle-12c:step1 /tmp/install/install` (takes about 5m)
 ```
 Tue Sep 16 08:48:00 UTC 2014
 Starting Oracle Universal Installer...
@@ -159,18 +157,12 @@ As install user, execute the following script to complete the configuration.
 	2. This script needs a small password properties file for configuration assistants that require passwords (refer to install guide documentation).
 
 ```
-7) ` <enter>`
-
-8) ` # exit` (the scripts mentioned are executed as part of the step2 build)
-
-9) `$ docker commit step1 oracle-12c:installed`
+6) `$ docker commit step1 oracle-12c:installed`
 
 #### Step 2
 1) `$ docker build -t oracle-12c:step2 step2`
 
-2) `$ docker run --shm-size=4g -ti --name step2 oracle-12c:step2 /bin/bash`
-
-3) ` # /tmp/create` (takes about 15m)
+2) `$ docker run --shm-size=4g -ti --name step2 oracle-12c:step2 /tmp/create` (takes about 15m)
 ```
 Tue Sep 16 11:07:30 UTC 2014
 Creating database...
@@ -217,9 +209,7 @@ Running pupbld.sql...
 Tue Sep 16 11:19:38 UTC 2014
 Create is done; commit the container now
 ```
-4) ` # exit`
-
-5) `$ docker commit step2 oracle-12c:created`
+3) `$ docker commit step2 oracle-12c:created`
 
 #### Step 3
 1) `$ docker build -t oracle-12c step3`
